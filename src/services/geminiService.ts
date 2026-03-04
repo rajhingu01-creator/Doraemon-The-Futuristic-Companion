@@ -1,6 +1,6 @@
 import { GoogleGenAI, Modality, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const ai = new GoogleGenAI({ apiKey: "AIzaSyDjUFMm7sNvQnWu6TbTpPhnS28gthm_52U" });
 
 export const generateGujuBotImage = async (action: string = "smiling") => {
   const actionPrompts: Record<string, string> = {
@@ -29,8 +29,8 @@ export const generateGujuBotImage = async (action: string = "smiling") => {
 
   for (const part of response.candidates?.[0]?.content?.parts || []) {
     if (part.inlineData) {
-      return `data:image/png;base64,${part.inlineData.data}`;
-    }
+  return `data:image/png;base64,${part.inlineData.data}`;
+}
   }
   return null;
 };
